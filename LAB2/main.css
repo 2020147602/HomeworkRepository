@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+body {
+    background-color:white;
+}
+
+h1 {
+    color :  rgb(95,0,128);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 35px;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+    
+}
+
+ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current{
+    border: solid;
+    border-top-color: red;
+    border-bottom-color: red;
+    border-left-color: white;
+    border-right-color: white;
+	color: rgb(0, 0, 0);
+}
+/* background-color,text-align,
+padding,margin,border,font-size,
+font-family,color,width,height */
+
+.account {
+    margin:5%;
+
+    margin-top: 30px;
+    margin-bottom: 60px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.account input {
+    width: 200px;
+    height: 18px;
+}
+
+.essential{
+    font-size: 20px;
+    font-weight: 1px;
+}
+
+.bt input {
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgb(95,0,128);
+    text-align: center;
+    border-radius: 3px;
+    color: white;
+    border: 0px none;
+    cursor: pointer;
+}
+
+.bt2 input {
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgb(95,0,128);
+    text-align: center;
+    border-radius: 3px;
+    color: white;
+    border: 0px none;
+    cursor: pointer;
+}
+
+hr {
+    border: 0;
+    height: 1.5px;
+    background: rgb(95,0,128);
+}
