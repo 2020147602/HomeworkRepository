@@ -86,3 +86,15 @@ hr {
     height: 1.5px;
     background: rgb(95,0,128);
 }
+
+.box{
+    width: 300px;
+    padding-left: 20px;
+    
+}
+
+.subject{
+}
+.sub{
+    margin: 0.4rem;
+}

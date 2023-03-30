@@ -25,6 +25,18 @@
 
             <label for="birth">생일 : </label>
             <input type="date" name = "birth"><br><br>
+            <legend> 학과를 고르시오 </legend>
+            <div class="subject">
+                <label for="cs">컴퓨터과학과</label>
+                <input class="sub" name="subject" type="radio" id="cs"  value="cs"unchecked>  <br>   
+            
+                <label for="ai">인공지능학과</label>
+                <input class="sub" name="subject" type="radio" id="ai"  value="ai"unchecked>     
+            </div>
+            <br>
+
+            <label for="grade"> 학년 : </label>
+            <input type="text" name = "grade" value="0학년"><br><br>
 
             <label for="grade"> 학년 : </label>
             <input type="text" name = "grade" value="0학년"><br><br>
@@ -43,7 +55,12 @@
 
             <label for="password">비밀번호 확인 : </label>
             <input type="password" maxlength="5" name = "password" placeholder="비밀번호 확인" required><br><br>
-
+            
+            
+            
+            <br>
+            
+            
             <div class="bt">
                 <input class="1" type="submit" value="Signup">
                 <input class="2" type="submit" value="Cancel">
@@ -51,6 +68,10 @@
 
         </div>
         
+        <div class="box">
+            <input type="checkbox" id="scales" name="scales" >
+            <label for="scales">본 가입을 동의합니다.</label>
+        </div>
         
         
     </body>
