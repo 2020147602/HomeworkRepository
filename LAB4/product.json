@@ -1,0 +1,80 @@
+[
+  {
+    "name": "G70",
+    "category": "SEDAN",
+    "price": 4035,
+    "image": "img/car1.png",
+    "description":"이 차는 G70 입니다."
+  },
+  {
+    "name": "G80",
+    "category": "SEDAN",
+    "price": 5507,
+    "image": "img/car2.png",
+    "description":"이 차는 G80 입니다."
+  },
+  {
+    "name": "GV80",
+    "category": "SUV",
+    "price": 6430,
+    "image": "img/car3.png",
+    "description":"이 차는 GV80 입니다."
+  },
+  {
+    "name": "GV70",
+    "category": "SUV",
+    "price": 4904,
+    "image": "img/car4.png",
+    "description":"이 차는 GV70 입니다."
+  },
+  {
+    "name": "Mint Conept",
+    "category": "SEDAN",
+    "price": 40350,
+    "image": "img/car5.png",
+    "description":"이 차는 Mint Concept 입니다."
+  },
+  {
+    "name": "Mint Conept",
+    "category": "SEDAN",
+    "price": 40350,
+    "image": "img/car5.png",
+    "description":"이 차는 Mint Concept 입니다."
+  },
+  {
+    "name": "Mint Conept",
+    "category": "SEDAN",
+    "price": 40350,
+    "image": "img/car5.png",
+    "description":"이 차는 Mint Concept 입니다."
+  },
+  {
+    "name": "Mint Conept",
+    "category": "SEDAN",
+    "price": 40350,
+    "image": "img/car5.png",
+    "description":"이 차는 Mint Concept 입니다."
+  },
+  {
+    "name": "Mint Conept",
+    "category": "SEDAN",
+    "price": 40350,
+    "image": "img/car5.png",
+    "description":"이 차는 Mint Concept 입니다."
+  },
+  {
+    "name": "Mint Conept",
+    "category": "SEDAN",
+    "price": 40350,
+    "image": "img/car5.png",
+    "description":"이 차는 Mint Concept 입니다."
+  },
+  {
+    "name": "G70",
+    "category": "SEDAN",
+    "price": 403500,
+    "image": "img/car1.png",
+    "description":"이 차는 G70 입니다."
+  }
+
+]

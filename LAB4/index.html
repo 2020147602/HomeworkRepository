@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <title>제네시스(Genesis)</title>
+  </head>
+  <body class="idxbody">
+    <header>
+      <p>미래를 향한 대담한 비전</p>
+      <h1 id="header">FUTURING GENESIS</h1>
+    </header>
+    <nav class="navigation">
+      <div class="navi main" onclick="location.href='index.html'">
+        메인페이지
+      </div>
+      <div class="navi login" onclick="location.href='login.html'">로그인</div>
+      <div class="navi sign" onclick="location.href='signup.html'">
+        회원가입
+      </div>
+    </nav>
+
+    <div>
+      <label for="keyword">Keyword:</label>
+      <input type="text" id="keyword" />
+      <button onclick="filterProducts()">Search</button>
+    </div>
+    <div>
+      <label for="category">Category:</label>
+      <select id="category" onchange="filterProducts()">
+        <option value="">All</option>
+        <option value="SEDAN">SEDAN</option>
+        <option value="SUV">SUV</option>
+      </select>
+    </div>
+    <div>
+      <label for="sort">Sort by:</label>
+      <select id="sort" onchange="filterProducts()">
+        <option value="price_asc">Price (Low to High)</option>
+        <option value="price_desc">Price (High to Low)</option>
+      </select>
+    </div>
+    <ul id="product-list"></ul>
+
+    <div id="product-details"></div>
+
+    <script>
+      const productListElement = document.getElementById("product-list");
+      const productDetailsElement = document.getElementById("product-details");
+      const keywordInput = document.getElementById("keyword");
+      const categoryInput = document.getElementById("category");
+      const sortInput = document.getElementById("sort");
+      let selectedProduct = null;
+
+      let products = []; // 전체 제품 목록을 저장하는 배열
+      let filteredProducts = []; // 필터링된 제품 목록을 저장하는 배열
+      let page = 1; // 현재 페이지
+      const itemsPerPage = 5; // 한 페이지에 표시되는 제품 수
+
+      // JSON 파일 불러오기
+      async function fetchProducts() {
+        try {
+          const response = await fetch("product.json");
+          products = await response.json();
+          filterProducts();
+        } catch (error) {
+          console.error("Failed to fetch products:", error);
+        }
+      }
+
+      // 제품 필터링 및 출력
+      function filterProducts() {
+        const keyword = keywordInput.value.toLowerCase();
+        const category = categoryInput.value;
+        const sort = sortInput.value;
+
+        filteredProducts = products.filter((product) => {
+          const productName = product.name.toLowerCase();
+          const productCategory = product.category;
+
+          // 키워드 검색과 카테고리 필터링 적용
+          return (
+            productName.includes(keyword) &&
+            (category === "" || productCategory === category)
+          );
+        });
+
+        // 정렬 적용
+        if (sort === "price_asc") {
+          filteredProducts.sort((a, b) => a.price - b.price);
+        } else if (sort === "price_desc") {
+          filteredProducts.sort((a, b) => b.price - a.price);
+        }
+
+        // 페이지 초기화 및 제품 출력
+        page = 1;
+        renderProducts();
+      }
+
+    
+
+      // 제품 상세 정보 표시
+      function showProductDetails(event) {
+        const productDetails =
+          event.currentTarget.querySelector(".product-details");
+
+        if (productDetails.classList.contains("active")) {
+          productDetails.classList.remove("active");
+          selectedProduct = null;
+        } else {
+          productDetails.classList.add("active");
+          selectedProduct = event.currentTarget;
+        }
+      }
+
+      // Infinite Scroll 이벤트 처리
+      // Infinite Scroll 이벤트 처리
+      window.addEventListener("scroll", () => {
+        const { scrollTop, clientHeight, scrollHeight } =
+          document.documentElement;
+        if (
+          scrollTop + clientHeight >= scrollHeight - 20 &&
+          selectedProduct === null &&
+          filteredProducts.length > page * itemsPerPage
+        ) {
+          page++;
+          renderProducts(true);
+        }
+      });
+
+      // 제품 출력
+      function renderProducts(append) {
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const productsToRender = filteredProducts.slice(startIndex, endIndex);
+
+        if (!append) {
+          productListElement.innerHTML = "";
+        }
+
+        productsToRender.forEach((product) => {
+          const productItem = document.createElement("li");
+          productItem.className = "product-item";
+          productItem.innerHTML = `
+      <div class="product-image" onclick="showProductDetails(event)">
+        <img src="${product.image}" alt="${product.name}" />
+        <div class="product-details">
+          <h3>${product.name}</h3>
+          <p>Price: ${product.price}</p>
+          <p>${product.description}</p>
+        </div>
+      </div>
+    `;
+          productListElement.appendChild(productItem);
+        });
+      }
+
+      // 페이지 로드 시 초기화 및 제품 불러오기
+      window.addEventListener("DOMContentLoaded", () => {
+        keywordInput.value = "";
+        categoryInput.value = "";
+        sortInput.value = "price_asc";
+        fetchProducts();
+      });
+    </script>
+  </body>
+</html>
