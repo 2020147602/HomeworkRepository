@@ -1,0 +1,350 @@
+/* 공통 */
+
+body {
+  background-color: #ffffff;
+  font-family: cursive, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: rgb(95, 0, 128);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 35px;
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  border: solid;
+  border-top-color: red;
+  border-bottom-color: red;
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+}
+
+.account {
+  margin: 5%;
+
+  margin-top: 30px;
+  margin-bottom: 60px;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.account input {
+  width: 200px;
+  height: 18px;
+}
+
+.essential {
+  font-size: 20px;
+  font-weight: 1px;
+}
+
+.bt input {
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+  background-color: rgb(95, 0, 128);
+  text-align: center;
+  border-radius: 3px;
+  color: white;
+  border: 0px none;
+  cursor: pointer;
+}
+
+.bt2 input {
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+  background-color: rgb(95, 0, 128);
+  text-align: center;
+  border-radius: 3px;
+  color: white;
+  border: 0px none;
+  cursor: pointer;
+}
+
+hr {
+  border: 0;
+  height: 1.5px;
+  background: rgb(95, 0, 128);
+}
+
+.box {
+  width: 300px;
+  padding-left: 20px;
+}
+
+.sub {
+  margin: 0.4rem;
+}
+
+/* login.html && signup.html */
+
+/* 메뉴뉴바 디자인 */
+.navi {
+  font-size: 15px;
+  margin: 10px;
+}
+.main {
+  border: solid;
+  border-top-color: red;
+  border-bottom-color: red;
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.login {
+  border: solid;
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 253, 255);
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.sign {
+  border: solid;
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 253, 255);
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+/* 헤드 및 nav 부분 */
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+header {
+  animation-name: slide-in;
+  animation-duration: 2s;
+  color: rgb(95, 0, 128);
+  font-size: 25px;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 모든 컴포넌트 맥스 사이즈 한정 */
+.component {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/* 메뉴뉴바 디자인 */
+.navi {
+  font-size: 15px;
+  margin: 10px;
+}
+.main {
+  border: solid;
+  border-top-color: red;
+  border-bottom-color: red;
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.login {
+  border: solid;
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 253, 255);
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.sign {
+  border: solid;
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 253, 255);
+  border-left-color: white;
+  border-right-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.container {
+  max-width: 1020px;
+}
+
+/* detail */
+img {
+  margin: 30px 30%;
+  width: 50%;
+}
+
+.detailText {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+h5 {
+  font-size: 1.2em;
+  margin-top: 50px;
+}
+
+/* index.html */
+
+@media (max-width: 480px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .item {
+    width: 90%;
+    height: fit-content;
+    border: 2px #d4d4ff solid;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 800px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .item {
+    width: 45%;
+    height: fit-content;
+    border: 2px #c6c6fb solid;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 801px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .item {
+    width: 22.5%;
+    height: fit-content;
+    border: 2px #eeeeff solid;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+nav > a {
+  text-decoration: none;
+  color: #0000f0;
+  font-size: 1.5em;
+}
+
+nav > a:hover {
+  background-color: #f00000;
+}
+
+#banner {
+  text-align: center;
+  background-color: #f00000;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 50px;
+  padding-top: 18px;
+}
+
+.searchInput {
+  margin: 50px 20px;
+}
+
+.searchButton {
+  background-color: #003f7d;
+  color: white;
+  padding: 3px 15px;
+  border-radius: 8px;
+  margin: 40px 20px;
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.item > img {
+  width: 80%;
+  height: 280px;
+  margin: 0px;
+}
+
+.item > p {
+  font-size: 1em;
+  color: #f00000;
+  text-align: center;
+  margin: 5px 0px 0px 0px;
+}
+
+.moreInfoBtn {
+  width: 50%;
+  height: 30px;
+  margin: 5px;
+  background-color: #0000f0;
+  color: white;
+}
